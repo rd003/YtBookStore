@@ -1,0 +1,31 @@
+﻿@model YtBookStore.Models.Domain.Genre
+@{
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Add Genre</h3>
+            <form asp-action="Add" method="post">
+                <div class="form-group">
+                    <label asp-for="Name">Name *</label>
+                    <input type="text" class="form-control" asp-for="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                @if (TempData["msg"] != null)
+                {
+                    <div class="form-group">
+                        @TempData["msg"]
+                    </div>
+                }
+                <div class="form-group pt-3">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button>
+                    <a href="/Genre/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
