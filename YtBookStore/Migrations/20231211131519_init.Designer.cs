@@ -11,7 +11,7 @@ using YtBookStore.Models.Domain;
 namespace YtBookStore.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221001142950_init")]
+    [Migration("20231211131519_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
