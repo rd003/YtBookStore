@@ -9,9 +9,9 @@ namespace BibliotecaNA.Models.Domain
 
         }
 
-        public DbSet<Genre> Genre { get; set; }
-        public DbSet<Author> Author { get; set; }
-        public DbSet<Publisher> Publisher { get; set; }
-        public DbSet<Book> Book { get; set; }
+        public DbSet<Genero> Genero { get; set; }
+        public DbSet<Autor> Autor { get; set; }
+        public DbSet<Editora> Editora { get; set; }
+        public DbSet<Livro> Livro { get; set; }
     }
 }

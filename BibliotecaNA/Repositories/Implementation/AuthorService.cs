@@ -10,11 +10,11 @@ namespace BibliotecaNA.Repositories.Implementation
         {
             this.context = context;
         }
-        public bool Add(Author model)
+        public bool Add(Autor model)
         {
             try
             {
-                context.Author.Add(model);
+                context.Autor.Add(model);
                 context.SaveChanges();
                 return true;
             }
@@ -31,7 +31,7 @@ namespace BibliotecaNA.Repositories.Implementation
                 var data = this.FindById(id);
                 if (data == null)
                     return false;
-                context.Author.Remove(data);
+                context.Autor.Remove(data);
                 context.SaveChanges();
                 return true;
             }
@@ -41,21 +41,21 @@ namespace BibliotecaNA.Repositories.Implementation
             }
         }
 
-        public Author FindById(int id)
+        public Autor FindById(int id)
         {
-            return context.Author.Find(id);
+            return context.Autor.Find(id);
         }
 
-        public IEnumerable<Author> GetAll()
+        public IEnumerable<Autor> GetAll()
         {
-            return context.Author.ToList();
+            return context.Autor.ToList();
         }
 
-        public bool Update(Author model)
+        public bool Update(Autor model)
         {
             try
             {
-                context.Author.Update(model);
+                context.Autor.Update(model);
                 context.SaveChanges();
                 return true;
             }

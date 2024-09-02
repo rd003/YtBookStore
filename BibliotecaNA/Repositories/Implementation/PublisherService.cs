@@ -10,11 +10,11 @@ namespace BibliotecaNA.Repositories.Implementation
         {
             this.context = context;
         }
-        public bool Add(Publisher model)
+        public bool Add(Editora model)
         {
             try
             {
-                context.Publisher.Add(model);
+                context.Editora.Add(model);
                 context.SaveChanges();
                 return true;
             }
@@ -31,7 +31,7 @@ namespace BibliotecaNA.Repositories.Implementation
                 var data = this.FindById(id);
                 if (data == null)
                     return false;
-                context.Publisher.Remove(data);
+                context.Editora.Remove(data);
                 context.SaveChanges();
                 return true;
             }
@@ -41,21 +41,21 @@ namespace BibliotecaNA.Repositories.Implementation
             }
         }
 
-        public Publisher FindById(int id)
+        public Editora FindById(int id)
         {
-            return context.Publisher.Find(id);
+            return context.Editora.Find(id);
         }
 
-        public IEnumerable<Publisher> GetAll()
+        public IEnumerable<Editora> GetAll()
         {
-            return context.Publisher.ToList();
+            return context.Editora.ToList();
         }
 
-        public bool Update(Publisher model)
+        public bool Update(Editora model)
         {
             try
             {
-                context.Publisher.Update(model);
+                context.Editora.Update(model);
                 context.SaveChanges();
                 return true;
             }

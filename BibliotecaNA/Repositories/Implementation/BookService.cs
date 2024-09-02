@@ -10,11 +10,11 @@ namespace BibliotecaNA.Repositories.Implementation
         {
             this.context = context;
         }
-        public bool Add(Book model)
+        public bool Add(Livro model)
         {
             try
             {
-                context.Book.Add(model);
+                context.Livro.Add(model);
                 context.SaveChanges();
                 return true;
             }
@@ -31,7 +31,7 @@ namespace BibliotecaNA.Repositories.Implementation
                 var data = this.FindById(id);
                 if (data == null)
                     return false;
-                context.Book.Remove(data);
+                context.Livro.Remove(data);
                 context.SaveChanges();
                 return true;
             }
@@ -41,40 +41,40 @@ namespace BibliotecaNA.Repositories.Implementation
             }
         }
 
-        public Book FindById(int id)
+        public Livro FindById(int id)
         {
-            return context.Book.Find(id);
+            return context.Livro.Find(id);
         }
 
-        public IEnumerable<Book> GetAll()
+        public IEnumerable<Livro> GetAll()
         {
-            var data = (from book in context.Book
-                        join author in context.Author
-                        on book.AuthorId equals author.Id
-                        join publisher in context.Publisher on book.PubhlisherId equals publisher.Id
-                        join genre in context.Genre on book.GenreId equals genre.Id
-                        select new Book
+            var data = (from book in context.Livro
+                        join author in context.Autor
+                        on book.IdAutor equals author.Id
+                        join publisher in context.Editora on book.IdEditora equals publisher.Id
+                        join genre in context.Genero on book.IdGenero equals genre.Id
+                        select new Livro
                         {
                             Id = book.Id,
-                            AuthorId = book.AuthorId,
-                            GenreId = book.GenreId,
+                            IdAutor = book.IdAutor,
+                            IdGenero = book.IdGenero,
                             Isbn = book.Isbn,
-                            PubhlisherId = book.PubhlisherId,
-                            Title = book.Title,
-                            TotalPages = book.TotalPages,
-                            GenreName = genre.Name,
-                            AuthorName = author.AuthorName,
-                            PublisherName = publisher.PublisherName
+                            IdEditora = book.IdEditora,
+                            Titulo = book.Titulo,
+                            NrPaginas = book.NrPaginas,
+                            NomeGenero = genre.Nome,
+                            NomeAutor = author.Nome,
+                            NomeEditora = publisher.Nome
                         }
                         ).ToList();
             return data;
         }
 
-        public bool Update(Book model)
+        public bool Update(Livro model)
         {
             try
             {
-                context.Book.Update(model);
+                context.Livro.Update(model);
                 context.SaveChanges();
                 return true;
             }

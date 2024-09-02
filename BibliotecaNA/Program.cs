@@ -36,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Genre}/{action=Add}/{id?}");
+    pattern: "{controller=Genero}/{action=Add}/{id?}");
 
 app.Run();

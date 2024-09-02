@@ -2,10 +2,10 @@
 
 namespace BibliotecaNA.Models.Domain
 {
-    public class Author
+    public class Autor
     {
         public int Id { get; set; }
         [Required]
-        public string AuthorName { get; set; }
+        public string Nome { get; set; }
     }
 }

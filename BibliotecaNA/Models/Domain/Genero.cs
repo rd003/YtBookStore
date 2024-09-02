@@ -2,10 +2,10 @@
 
 namespace BibliotecaNA.Models.Domain
 {
-    public class Genre
+    public class Genero
     {
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string Nome { get; set; }
     }
 }

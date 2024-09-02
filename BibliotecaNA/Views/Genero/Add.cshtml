@@ -1,16 +1,16 @@
-﻿@model BibliotecaNA.Models.Domain.Genre
+﻿@model BibliotecaNA.Models.Domain.Genero
 @{
 }
 
 <div class="container pt-5">
     <div class="row">
         <div class="col-md-6">
-            <h3>Add Genre</h3>
+            <h3>Add Genero</h3>
             <form asp-action="Add" method="post">
                 <div class="form-group">
-                    <label asp-for="Name">Name *</label>
-                    <input type="text" class="form-control" asp-for="Name" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="Nome">Name *</label>
+                    <input type="text" class="form-control" asp-for="Nome" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
 
                 @if (TempData["msg"] != null)
@@ -21,7 +21,7 @@
                 }
                 <div class="form-group pt-3">
                     <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button>
-                    <a href="/Genre/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
+                    <a href="/Genero/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
                 </div>
 
             </form>
