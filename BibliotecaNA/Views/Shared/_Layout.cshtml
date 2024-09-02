@@ -1,39 +1,64 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Store</title>
+    <title>Biblioteca NA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        a{
-            font-family:Verdana, Geneva, Tahoma, sans-serif
+        a {
+            all: unset;
+            color: white;
+        }
+
+        .wrapper {
+            height: 100dvh;
+            width: 100dvw;
+        }
+
+        .logo img {
+            width: 18rem;
+        }
+
+        #sidebar {
+            width: 20%;
         }
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"> Book Store</a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="/Genero/Add" class="nav-link">Genre</a>
-            </li>
-            <li class="nav-item">
-                <a href="/Autor/Add" class="nav-link">Author</a>
-            </li>
-            <li class="nav-item active">
-                <a href="/Editora/Add" class="nav-link">Publisher</a>
-            </li>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="bg-dark">
+            <div class="p-4 pt-5">
+                <div class="logo">
+                    <img src="~/images/logo.jpg" alt="logo da aplicacao">
+                </div>
+                <br>
+                <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
+                    <li class="active">
+                        <a href="/Genero/Add">Generos</a>
+                    </li>
+                    <li>
+                        <a href="/Autor/Add">Autores</a>
+                    </li>
+                    <li>
+                        <a href="/Editora/Add">Editoras</a>
+                    </li>
+                    <li>
+                        <a href="/Livro/Add">Livros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-            <li class="nav-item">
-                <a href="/Livro/Add" class="nav-link">Book</a>
-            </li>
-        </ul>
-
-    </nav>
-    <div class="container">
-        @RenderBody()
+        <div id="content" class="w-100 h-100">
+            @RenderBody()
+        </div>
     </div>
 </body>
+
 </html>
