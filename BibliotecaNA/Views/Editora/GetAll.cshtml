@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BibliotecaNA.Models.Domain.Publisher>
+﻿@model IEnumerable<BibliotecaNA.Models.Domain.Editora>
 @{
 }
 
@@ -22,7 +22,7 @@
                 <tbody>
                     @foreach(var item in Model){
                     <tr>
-                        <td>@item.PublisherName</td>
+                        <td>@item.Nome</td>
                         <td>
                                 <a class="btn btn-success" href="/Publisher/Update?id=@item.Id"><i class="bi bi-pen"></i> Edit</a> |
                                 <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Publisher/Delete?id=@item.Id"><i class="bi bi-trash"></i> Delete</a>

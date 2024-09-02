@@ -1,17 +1,16 @@
-﻿@model BibliotecaNA.Models.Domain.Author
+﻿@model BibliotecaNA.Models.Domain.Editora
 @{
 }
 
 <div class="container pt-5">
     <div class="row">
         <div class="col-md-6">
-            <h3>Update Author</h3>
-            <form asp-action="Update" method="post">
-                <input type="hidden" asp-for="Id" />
+            <h3>Add Publisher</h3>
+            <form asp-action="Add" method="post">
                 <div class="form-group">
-                    <label asp-for="AuthorName">Author Name *</label>
-                    <input type="text" class="form-control" asp-for="AuthorName" />
-                    <span asp-validation-for="AuthorName" class="text-danger"></span>
+                    <label asp-for="Nome">PublisherName *</label>
+                    <input type="text" class="form-control" asp-for="Nome" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
 
                 @if (TempData["msg"] != null)
@@ -22,7 +21,7 @@
                 }
                 <div class="form-group pt-3">
                     <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button>
-                    <a href="/Author/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
+                    <a href="/Publisher/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
                 </div>
 
             </form>

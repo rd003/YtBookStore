@@ -1,4 +1,4 @@
-﻿@model BibliotecaNA.Models.Domain.Book
+﻿@model BibliotecaNA.Models.Domain.Livro
 @{
 }
 
@@ -8,17 +8,17 @@
             <h3>Add Book</h3>
             <form asp-action="Add" method="post">
                 <div class="form-group">
-                    <label asp-for="Title">Title *</label>
-                    <input type="text" class="form-control" asp-for="Title" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <label asp-for="Titulo">Title *</label>
+                    <input type="text" class="form-control" asp-for="Titulo" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="GenreId">Genre *</label>
-                    <select asp-for="GenreId" asp-items="Model.GenreList" class="form-control">
+                    <label asp-for="IdGenero">Genre *</label>
+                    <select asp-for="IdGenero" asp-items="Model.ListaGenero" class="form-control">
                         <option value="">--select--</option>
                     </select>
-                    <span asp-validation-for="GenreId" class="text-danger"></span>
+                    <span asp-validation-for="IdGenero" class="text-danger"></span>
                 </div>
 
                  <div class="form-group">
@@ -28,26 +28,26 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="TotalPages">Total Pages *</label>
-                    <input type="number" class="form-control" asp-for="TotalPages" />
-                    <span asp-validation-for="TotalPages" class="text-danger"></span>
+                    <label asp-for="NrPaginas">Total Pages *</label>
+                    <input type="number" class="form-control" asp-for="NrPaginas" />
+                    <span asp-validation-for="NrPaginas" class="text-danger"></span>
                 </div>
 
 
                 <div class="form-group">
-                    <label asp-for="AuthorId">Author *</label>
-                    <select asp-for="AuthorId" asp-items="Model.AuthorList" class="form-control">
+                    <label asp-for="IdAutor">Author *</label>
+                    <select asp-for="IdAutor" asp-items="Model.ListaAutor" class="form-control">
                         <option value="">--select--</option>
                     </select>
-                    <span asp-validation-for="AuthorId" class="text-danger"></span>
+                    <span asp-validation-for="IdAutor" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Title">Publisher *</label>
-                    <select asp-for="PubhlisherId" asp-items="Model.PublisherList" class="form-control">
+                    <label asp-for="Titulo">Publisher *</label>
+                    <select asp-for="IdEditora" asp-items="Model.ListaEditora" class="form-control">
                         <option value="">--select--</option>
                     </select>
-                    <span asp-validation-for="PubhlisherId" class="text-danger"></span>
+                    <span asp-validation-for="IdEditora" class="text-danger"></span>
                 </div>
 
                 @if (TempData["msg"] != null)

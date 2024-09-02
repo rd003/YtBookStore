@@ -4,10 +4,10 @@ namespace BibliotecaNA.Repositories.Abstract
 {
     public interface IAuthorService
     {
-        bool Add(Author model);
-        bool Update(Author model);
+        bool Add(Autor model);
+        bool Update(Autor model);
         bool Delete(int id);
-        Author FindById(int id);
-        IEnumerable<Author> GetAll();
+        Autor FindById(int id);
+        IEnumerable<Autor> GetAll();
     }
 }

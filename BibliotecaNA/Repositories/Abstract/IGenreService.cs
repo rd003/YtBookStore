@@ -4,10 +4,10 @@ namespace BibliotecaNA.Repositories.Abstract
 {
     public interface IGenreService
     {
-        bool Add(Genre model);
-        bool Update(Genre model);
+        bool Add(Genero model);
+        bool Update(Genero model);
         bool Delete(int id);
-        Genre FindById(int id);
-        IEnumerable<Genre> GetAll();
+        Genero FindById(int id);
+        IEnumerable<Genero> GetAll();
     }
 }

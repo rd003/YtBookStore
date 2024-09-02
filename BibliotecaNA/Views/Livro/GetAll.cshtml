@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BibliotecaNA.Models.Domain.Book>
+﻿@model IEnumerable<BibliotecaNA.Models.Domain.Livro>
 @{
 }
 
@@ -27,12 +27,12 @@
                 <tbody>
                     @foreach(var item in Model){
                     <tr>
-                            <td>@item.Title</td>
-                            <td>@item.GenreName</td>
+                            <td>@item.Titulo</td>
+                            <td>@item.NomeGenero</td>
                             <td>@item.Isbn</td>
-                            <td>@item.TotalPages</td>
-                            <td>@item.AuthorName</td>
-                            <td>@item.PublisherName</td>
+                            <td>@item.NrPaginas</td>
+                            <td>@item.NomeAutor</td>
+                            <td>@item.NomeEditora</td>
                         <td>
                                 <a class="btn btn-success" href="/Book/Update?id=@item.Id"><i class="bi bi-pen"></i></a> |
                                 <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Book/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>

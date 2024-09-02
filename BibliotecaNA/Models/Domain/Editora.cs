@@ -2,10 +2,10 @@
 
 namespace BibliotecaNA.Models.Domain
 {
-    public class Publisher
+    public class Editora
     {
         public int Id { get; set; }
         [Required]
-        public string PublisherName { get; set; }
+        public string Nome { get; set; }
     }
 }

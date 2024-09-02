@@ -4,10 +4,10 @@ using BibliotecaNA.Repositories.Abstract;
 
 namespace BibliotecaNA.Controllers
 {
-    public class AuthorController : Controller
+    public class GeneroController : Controller
     {
-        private readonly IAuthorService service;
-        public AuthorController(IAuthorService service)
+        private readonly IGenreService service;
+        public GeneroController(IGenreService service)
         {
             this.service = service;
         }
@@ -17,7 +17,7 @@ namespace BibliotecaNA.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Author model)
+        public IActionResult Add(Genero model)
         {
             if (!ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace BibliotecaNA.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Author model)
+        public IActionResult Update(Genero model)
         {
             if (!ModelState.IsValid)
             {
@@ -70,5 +70,6 @@ namespace BibliotecaNA.Controllers
             var data = service.GetAll();
             return View(data);
         }
+
     }
 }
