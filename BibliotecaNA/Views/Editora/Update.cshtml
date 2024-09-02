@@ -5,11 +5,11 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col-md-6">
-            <h3>Update Publisher</h3>
+            <h3>Update Editora</h3>
             <form asp-action="Update" method="post">
                 <input type="hidden" asp-for="Id" />
                 <div class="form-group">
-                    <label asp-for="Nome">PublisherName *</label>
+                    <label asp-for="Nome">EditoraName *</label>
                     <input type="text" class="form-control" asp-for="Nome" />
                     <span asp-validation-for="Nome" class="text-danger"></span>
                 </div>
@@ -22,7 +22,7 @@
                 }
                 <div class="form-group pt-3">
                     <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button>
-                    <a href="/Publisher/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
+                    <a href="/Editora/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>List</a>
                 </div>
 
             </form>
