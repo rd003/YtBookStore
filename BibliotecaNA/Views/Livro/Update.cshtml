@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Atualizar Livro</h3>
-            <form asp-action="Update" method="post" class="d-flex flex-column gap-4">
+            <form asp-action="Update" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
                 <input type="hidden" class="form-control" asp-for="Id" />
 
                 <div class="form-group">
@@ -14,6 +14,14 @@
                     <input type="text" class="form-control" asp-for="Titulo" />
                     <span asp-validation-for="Titulo" class="text-danger"></span>
                 </div>
+
+
+                <div class="form-group">
+                    <label asp-for="ImageFile">Upload da Capa *</label>
+                    <input type="file" class="form-control" asp-for="ImageFile" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+
 
                 <div class="form-group">
                     <label asp-for="IdGenero">Gênero *</label>
@@ -59,7 +67,7 @@
                     </div>
                 }
                 <div class="form-group pt-3">
-                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Adicionar</button>
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Atualizar</button>
                     <a href="/Livro/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>Listar livros</a>
                 </div>
 

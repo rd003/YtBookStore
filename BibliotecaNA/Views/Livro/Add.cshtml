@@ -6,11 +6,17 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Adicionar livros</h3>
-            <form asp-action="Add" method="post" class="d-flex flex-column gap-4">
+            <form asp-action="Add" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
                 <div class="form-group">
                     <label asp-for="Titulo">Título *</label>
                     <input type="text" class="form-control" asp-for="Titulo" />
                     <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageFile">Upload da Capa *</label>
+                    <input type="file" class="form-control" asp-for="ImageFile" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">

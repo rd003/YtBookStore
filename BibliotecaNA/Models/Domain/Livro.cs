@@ -21,20 +21,23 @@ namespace BibliotecaNA.Models.Domain
         public int IdEditora { get; set; }
         [Required]
         public int IdGenero { get; set; }
+        public string? ImagePath { get; set; } // Propriedade para armazenar o caminho da imagem
 
         [NotMapped]
-        public string ? NomeAutor { get; set; }
+        public string? NomeAutor { get; set; }
         [NotMapped]
-        public string ? NomeEditora { get; set; }
+        public string? NomeEditora { get; set; }
         [NotMapped]
-        public string ? NomeGenero { get; set; }
+        public string? NomeGenero { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
 
         [NotMapped]
-        public List<SelectListItem> ? ListaAutor { get; set; }
+        public List<SelectListItem>? ListaAutor { get; set; }
         [NotMapped]
         public List<SelectListItem>? ListaEditora { get; set; }
         [NotMapped]
-        public List<SelectListItem> ? ListaGenero { get; set; }
+        public List<SelectListItem>? ListaGenero { get; set; }
 
     }
 }
