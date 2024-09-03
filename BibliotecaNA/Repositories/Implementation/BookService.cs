@@ -64,7 +64,8 @@ namespace BibliotecaNA.Repositories.Implementation
                             NrPaginas = book.NrPaginas,
                             NomeGenero = genre.Nome,
                             NomeAutor = author.Nome,
-                            NomeEditora = publisher.Nome
+                            NomeEditora = publisher.Nome,
+                            ImagePath = book.ImagePath
                         }
                         ).ToList();
             return data;
