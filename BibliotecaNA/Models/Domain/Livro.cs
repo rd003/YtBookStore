@@ -30,7 +30,7 @@ namespace BibliotecaNA.Models.Domain
         [NotMapped]
         public string? NomeGenero { get; set; }
         [NotMapped]
-        public IFormFile ImageFile { get; set; }
+        public IFormFile? ImageFile { get; set; }
 
         [NotMapped]
         public List<SelectListItem>? ListaAutor { get; set; }
