@@ -122,6 +122,13 @@ namespace BibliotecaNA.Controllers
                 // Armazena o caminho da imagem no banco de dados
                 model.ImagePath = "/upload/" + uniqueFileName;
             }
+            else
+            {
+                var livroAtual = bookService.FindById(model.Id);
+                model.ImagePath = livroAtual.ImagePath;
+            }
+
+
 
             var result = bookService.Update(model);
             if (result)

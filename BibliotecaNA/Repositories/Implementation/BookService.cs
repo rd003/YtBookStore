@@ -75,14 +75,32 @@ namespace BibliotecaNA.Repositories.Implementation
         {
             try
             {
-                context.Livro.Update(model);
+                var existingLivro = context.Livro.Find(model.Id);
+                if (existingLivro == null)
+                {
+                    return false; // Livro não encontrado
+                }
+
+                // Atualize as propriedades do livro existente
+                existingLivro.Titulo = model.Titulo;
+                existingLivro.Isbn = model.Isbn;
+                existingLivro.NrPaginas = model.NrPaginas;
+                existingLivro.IdAutor = model.IdAutor;
+                existingLivro.IdEditora = model.IdEditora;
+                existingLivro.IdGenero = model.IdGenero;
+                existingLivro.ImagePath = model.ImagePath;
+
+                // Salve as mudanças
                 context.SaveChanges();
                 return true;
             }
             catch (Exception ex)
             {
+                // Log da exceção para depuração
+                Console.WriteLine($"Error updating livro: {ex.Message}");
                 return false;
             }
         }
+
     }
 }
