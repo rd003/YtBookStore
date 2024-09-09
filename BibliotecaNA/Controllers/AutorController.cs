@@ -26,10 +26,10 @@ namespace BibliotecaNA.Controllers
             var result = service.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "Adicionado com sucesso";
                 return RedirectToAction(nameof(Add));
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "Ocorreu um erro do lado do servidor";
             return View(model);
         }
 
@@ -52,7 +52,7 @@ namespace BibliotecaNA.Controllers
             {
                 return RedirectToAction("GetAll");
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "Ocorreu um erro do lado do servidor";
             return View(model);
         }
 
