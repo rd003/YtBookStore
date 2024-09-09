@@ -5,9 +5,9 @@ namespace BibliotecaNA.Repositories.Implementation
 {
 public class UsuarioService : IUsuarioService
 {
-    private readonly DatabaseContext _context;
+    private readonly BibliotecaContext _context;
 
-    public UsuarioService(DatabaseContext context)
+    public UsuarioService(BibliotecaContext context)
     {
         _context = context;
     }
