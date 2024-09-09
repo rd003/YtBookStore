@@ -13,5 +13,6 @@ namespace BibliotecaNA.Models.Domain
         public DbSet<Autor> Autor { get; set; }
         public DbSet<Editora> Editora { get; set; }
         public DbSet<Livro> Livro { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
