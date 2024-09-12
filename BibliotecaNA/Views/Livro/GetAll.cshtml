@@ -3,45 +3,43 @@
 }
 
 <div class="container pt-3">
+
     <div class="row">
-        <div class="col-md-12">
-            <a class="btn btn-dark" href="/Livro/Add">Adicionar mais livros</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Livros</h3>
-            <div class="container-fluid text-center">
-                <div class="row">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col mt-3">
-                            <div class="card">
-                                <div class="d-flex">
-                                    <img src="@item.ImagePath" class="card-img-top" alt="@item.Titulo"
-                                        style="width: 10rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong>Título:</strong>@item.Titulo</h5>
-                                        <div class="card-text">
-                                            <p><strong>Autor:</strong>@item.NomeAutor</p>
-                                            <p><strong>Editora:</strong>@item.NomeEditora</p>
-                                            <p><strong>Gênero:</strong>@item.NomeGenero</p>
-                                            <p><strong>Páginas:</strong>@item.NrPaginas</p>
-                                            <p><strong>Isbn:</strong>@item.Isbn</p>
-                                        </div>
-                                        <div class="d-flex flex-row gap-3">
-                                            <a class="btn btn-success" href="/Livro/Update?id=@item.Id">Editar</a>
-                                            <a class="btn btn-danger"
-                                                onclick="return window.confirm('Tem a certeza que deseja remover?')"
-                                                href="/Livro/Delete?id=@item.Id">Remover</a>
-                                        </div>
+        <h3>Livros</h3>
+        <div class="container-fluid text-center">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col mt-3">
+                        <div class="card">
+                            <div class="d-flex">
+                                <img src="@item.ImagePath" class="card-img-top" alt="@item.Titulo" style="width: 10rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>Título:</strong>@item.Titulo</h5>
+                                    <div class="card-text">
+                                        <p><strong>Autor:</strong>@item.NomeAutor</p>
+                                        <p><strong>Editora:</strong>@item.NomeEditora</p>
+                                        <p><strong>Gênero:</strong>@item.NomeGenero</p>
+                                        <p><strong>Páginas:</strong>@item.NrPaginas</p>
+                                        <p><strong>Isbn:</strong>@item.Isbn</p>
+                                    </div>
+                                    <div class="d-flex flex-row gap-3">
+                                        <a class="btn btn-outline-success" href="/Livro/Update?id=@item.Id">Editar</a>
+                                        <a class="btn btn-outline-danger"
+                                            onclick="return window.confirm('Tem a certeza que deseja remover?')"
+                                            href="/Livro/Delete?id=@item.Id">Remover</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    }
-                </div>
+                    </div>
+                }
             </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <div class="col-md-6">
+            <a class="btn btn-success p-3 " href="/Livro/Add">Adicionar mais livros</a>
         </div>
     </div>
 </div>

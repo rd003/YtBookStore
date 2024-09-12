@@ -13,6 +13,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+.pink-color {
+  color: #9b5b7d;
 }

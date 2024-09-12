@@ -9,22 +9,25 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
     <style>
-				body {
-            height: 100dvh;
-            width: 100dvw;
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
 
-        .shared-link a{
+        .shared-link a {
             all: unset;
             color: white;
         }
 
         .wrapper {
-            height: 100dvh;
-            width: 100dvw;
+            height: 100vh;
+            width: 100vw;
         }
 
         .logo img {
@@ -33,13 +36,15 @@
 
         #sidebar {
             width: 20%;
+            height: 100vh;
+            background-color: #343a40;
         }
     </style>
 </head>
 
 <body>
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="bg-dark">
+    <div class="wrapper d-flex align-items-stretch h-100">
+        <nav id="sidebar" class="bg-dark h-100">
             <div class="p-4 pt-5">
                 <div class="logo">
                     <img src="~/images/logo.jpg" alt="logo da aplicacao">
