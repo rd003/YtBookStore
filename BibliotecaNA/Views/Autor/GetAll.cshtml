@@ -19,7 +19,7 @@
                     <tr>
                         <td>@item.Nome</td>
                         <td class="d-flex gap-4">
-                            <a class="btn btn-success" href="/Autor/Update?id=@item.Id"> <i class="bi bi-pen"></i>
+                            <a class="btn confirm-btn" href="/Autor/Update?id=@item.Id"> <i class="bi bi-pen"></i>
                                 Editar</a>
                             <a class="btn btn-danger" onclick="return window.confirm('Tem a certeza que deseja remover?')"
                                 href="/Autor/Delete?id=@item.Id"><i class="bi bi-trash"></i> Remover</a>
@@ -31,7 +31,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <a class="btn btn-success" href="/Autor/Add">Adicionar mais autores</a>
+            <a class="btn add-btn" href="/Autor/Add">Adicionar mais autores</a>
         </div>
     </div>
 </div>

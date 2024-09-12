@@ -5,7 +5,7 @@
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2 class="mb-4 text-center" style="color: #9b5b7d;">Adicionar Novo Livro</h2>
+            <h2 class="mb-4 text-center pink-tlt">Adicionar Novo Livro</h2>
             <div class="card shadow-lg p-4">
                 <form asp-action="Add" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
                     <div class="form-floating">
@@ -66,9 +66,9 @@
                     }
 
                     <div class="d-flex justify-content-between mt-2">
-                        <button type="submit" class="btn btn-outline-success btn-lg px-4"><i class="bi bi-save"></i>
+                        <button type="submit" class="btn add-btn btn-lg px-4"><i class="bi bi-save"></i>
                             Adicionar</button>
-                        <a href="/Livro/GetAll" class="btn btn-outline-dark btn-lg px-4"><i class="bi bi-list"></i>
+                        <a href="/Livro/GetAll" class="btn btn-dark btn-lg px-4"><i class="bi bi-list"></i>
                             Listar Livros</a>
                     </div>
                 </form>

@@ -4,7 +4,7 @@
 
 <div class="container pt-5">
     <div class="row">
-        <h3>Usuarios</h3>
+        <h3 class="pink-tlt">Usuarios</h3>
         <table class="table table-borderless table-hover">
             <thead>
                 <tr>
@@ -20,7 +20,7 @@
                         <td>@item.Nome</td>
                         <td>@item.Email</td>
                         <td class="d-flex gap-4">
-                            <a class="btn btn-success" href="/Usuario/Update?id=@item.Id"> <i class="bi bi-pen"></i>
+                            <a class="btn confirm-btn" href="/Usuario/Update?id=@item.Id"> <i class="bi bi-pen"></i>
                                 Editar</a>
                             <a class="btn btn-danger" onclick="return window.confirm('Tem a certeza que deseja remover?')"
                                 href="/Usuario/Delete?id=@item.Id"><i class="bi bi-trash"></i> Remover</a>
@@ -32,7 +32,7 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <a class="btn btn-success" href="/Usuario/Add">Adicionar mais Usuarioes</a>
+            <a class="btn add-btn" href="/Usuario/Add">Adicionar mais Usuarioes</a>
         </div>
     </div>
 </div>
