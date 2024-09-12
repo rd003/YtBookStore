@@ -27,10 +27,10 @@ namespace BibliotecaNA.Controllers
             var result = service.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "Genero adicionado com sucesso!";
                 return RedirectToAction(nameof(Add));
             }
-            TempData["msg"] = "Error has occured on server side";
+            TempData["msg"] = "Erro! Tente novamente mais tarde";
             return View(model);
         }
 
