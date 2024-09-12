@@ -4,37 +4,34 @@
 
 <div class="container pt-5">
     <div class="row">
-        <div class="col-md-6">
-            <a class="btn btn-dark" href="/Autor/Add">Adicionar mais autores</a>
-        </div>
+        <h3>Autores</h3>
+
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th>Nome do autor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td class="d-flex gap-4">
+                            <a class="btn btn-success" href="/Autor/Update?id=@item.Id"> <i class="bi bi-pen"></i>
+                                Editar</a>
+                            <a class="btn btn-danger" onclick="return window.confirm('Tem a certeza que deseja remover?')"
+                                href="/Autor/Delete?id=@item.Id"><i class="bi bi-trash"></i> Remover</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h3>Autores</h3>
-
-            <table class="table table-stripped table-bordered table-dark">
-                <thead>
-                    <tr>
-                        <th>Nome do autor</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.Nome</td>
-                            <td>
-                                <a class="btn btn-success" href="/Autor/Update?id=@item.Id"> <i class="bi bi-pen"></i>
-                                    Editar</a> |
-                                <a class="btn btn-danger"
-                                    onclick="return window.confirm('Tem a certeza que deseja remover?')"
-                                    href="/Autor/Delete?id=@item.Id"><i class="bi bi-trash"></i> Remover</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            <a class="btn btn-success" href="/Autor/Add">Adicionar mais autores</a>
         </div>
     </div>
 </div>
