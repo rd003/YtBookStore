@@ -1,4 +1,9 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using BibliotecaNA.Models.Domain;
 using BibliotecaNA.Repositories.Abstract;
 
@@ -82,6 +87,55 @@ namespace BibliotecaNA.Controllers
         {
             var data = service.GetAll();
             return View(data);
+        }
+
+//Login
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string email, string senha)
+        {
+            var usuario = service.Login(email, senha);
+            if (usuario != null)
+            {
+                // Cria as Claims de autenticação
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, usuario.Nome),
+                    new Claim(ClaimTypes.Email, usuario.Email),
+                    new Claim("UserId", usuario.Id.ToString())
+                };
+
+                var identity = new ClaimsIdentity(claims, "CookieAuth");
+                var principal = new ClaimsPrincipal(identity);
+
+                // Registra a autenticação do usuário
+                await HttpContext.SignInAsync("CookieAuth", principal);
+
+                return RedirectToAction("Add", "Genero");
+            }
+
+            // Retorna uma mensagem de erro se o login falhar
+            ModelState.AddModelError(string.Empty, "Email ou senha inválidos.");
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            // Faz o logout do usuário
+            await HttpContext.SignOutAsync("CookieAuth");
+            return RedirectToAction("Login", "Usuario");
+        }
+
+        [HttpGet]
+        public IActionResult AcessoNegado()
+        {
+            return View();
         }
     }
 }
