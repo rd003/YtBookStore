@@ -1,11 +1,10 @@
 ﻿@model BibliotecaNA.Models.Domain.Genero
 @{
 }
-
 <div class="container pt-5">
     <div class="row">
         <div class="col-md-6">
-            <h3 style="color: #9b5b7d;">Adicionar Gênero</h3>
+            <h3 class="pink-btn">Adicionar Gênero</h3>
             <form asp-action="Add" method="post">
                 <div class="form-group">
                     <label asp-for="Nome">Nome *</label>
@@ -20,8 +19,8 @@
                     </div>
                 }
                 <div class="form-group pt-3">
-                    <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Adicionar</button>
-                    <a href="/Genero/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>Listar gêneros</a>
+                    <button type="submit" class="btn confirm-btn"><i class="bi bi-save"></i> Adicionar</button>
+                    <a href="/Genero/GetAll" class="btn"> <i class="bi bi-list"></i>Listar gêneros</a>
                 </div>
 
             </form>
