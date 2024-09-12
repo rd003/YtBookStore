@@ -10,5 +10,6 @@ public interface IUserService
     bool Delete(int id);
     Usuario FindById(int id);
     IEnumerable<Usuario> GetAll();
+    Usuario Login(string email, string senha);
 }
 }

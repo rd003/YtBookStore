@@ -1,5 +1,6 @@
 using BibliotecaNA.Models.Domain;
 using BibliotecaNA.Repositories.Abstract;
+using System.Linq;
 
 namespace BibliotecaNA.Repositories.Implementation
 {
@@ -44,5 +45,10 @@ public class UserService : IUserService
     {
         return _context.Usuario.ToList();
     }
+
+    public Usuario Login(string email, string senha)
+    {
+        return _context.Usuario.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+    }    
 }
 }

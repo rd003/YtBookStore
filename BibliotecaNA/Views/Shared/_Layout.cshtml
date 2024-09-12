@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
     <style>
         a {
             all: unset;
@@ -29,6 +29,23 @@
         #sidebar {
             width: 20%;
         }
+
+        .btn-logout {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-logout:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 
@@ -42,7 +59,7 @@
                 <br>
                 <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
                     <li class="active">
-                        <a href="/Genero/GetAll">Generos</a>
+                        <a href="/Genero/GetAll">Gêneros</a>
                     </li>
                     <li>
                         <a href="/Autor/GetAll">Autores</a>
@@ -54,9 +71,12 @@
                         <a href="/Livro/GetAll">Livros</a>
                     </li>
                     <li>
-                        <a href="/Usuario/GetAll">Usuario</a>
+                        <a href="/Usuario/GetAll">Usuário</a>
                     </li>
                 </ul>
+                <form asp-controller="Usuario" asp-action="Logout" method="post">
+                    <button type="submit" class="btn-logout">Logout</button>
+                </form>
             </div>
         </nav>
 

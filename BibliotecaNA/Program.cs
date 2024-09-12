@@ -7,6 +7,15 @@ using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAuthentication("CookieAuth")
+    .AddCookie("CookieAuth", options =>
+    {
+        options.Cookie.Name = "UserLoginCookie";
+        options.LoginPath = "/Usuario/Login"; // Caminho para a página de login
+        options.LogoutPath = "/Usuario/Logout"; // Caminho para a página de logout
+        options.AccessDeniedPath = "/Usuario/AcessoNegado"; // Caminho para acesso negado (opcional)
+    });
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -50,10 +59,11 @@ app.UseStaticFiles(new StaticFileOptions
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Genero}/{action=Add}/{id?}");
+    pattern: "{controller=Usuario}/{action=Login}");
 
 app.Run();

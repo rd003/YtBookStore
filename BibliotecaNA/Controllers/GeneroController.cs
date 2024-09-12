@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BibliotecaNA.Models.Domain;
 using BibliotecaNA.Repositories.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BibliotecaNA.Controllers
 {
