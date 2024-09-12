@@ -90,7 +90,6 @@ namespace BibliotecaNA.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImagePath")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Isbn")
@@ -107,6 +106,34 @@ namespace BibliotecaNA.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Livro");
+                });
+
+            modelBuilder.Entity("BibliotecaNA.Models.Domain.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BibliotecaNA.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20240902000427_InitialCreate")]
+    [Migration("20240909210731_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -92,6 +92,9 @@ namespace BibliotecaNA.Migrations
                     b.Property<int>("IdGenero")
                         .HasColumnType("int");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Isbn")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -106,6 +109,34 @@ namespace BibliotecaNA.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Livro");
+                });
+
+            modelBuilder.Entity("BibliotecaNA.Models.Domain.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario");
                 });
 #pragma warning restore 612, 618
         }

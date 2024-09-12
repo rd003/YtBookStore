@@ -72,11 +72,32 @@ namespace BibliotecaNA.Migrations
                     NrPaginas = table.Column<int>(type: "int", nullable: false),
                     IdAutor = table.Column<int>(type: "int", nullable: false),
                     IdEditora = table.Column<int>(type: "int", nullable: false),
-                    IdGenero = table.Column<int>(type: "int", nullable: false)
+                    IdGenero = table.Column<int>(type: "int", nullable: false),
+                    ImagePath = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Livro", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Senha = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
@@ -95,6 +116,9 @@ namespace BibliotecaNA.Migrations
 
             migrationBuilder.DropTable(
                 name: "Livro");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
         }
     }
 }
