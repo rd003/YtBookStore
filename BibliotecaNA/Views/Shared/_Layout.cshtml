@@ -62,7 +62,12 @@
         #sidebar {
             width: 20%;
             height: 100vh;
-            background-color: #ed8876;
+            background-color: #fff;
+            border-right: #ed8876 solid 1px;
+        }
+
+        .content-container{
+            background-color: #f8f9fa;
         }
 
         .btn-logout {
@@ -86,7 +91,7 @@
 
 <body>
     <div class="wrapper d-flex align-items-stretch h-100">
-        <nav id="sidebar" class="bg-dark h-100">
+        <nav id="sidebar" class=" h-100">
             <div class="p-4 pt-5">
                 <div class="logo">
                     <img src="~/images/logo.png" alt="logo da aplicacao">
@@ -115,7 +120,7 @@
             </div>
         </nav>
 
-        <div id="content" class="w-100 h-100">
+        <div id="content content-container" class="w-100 h-100">
             @RenderBody()
         </div>
     </div>
