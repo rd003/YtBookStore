@@ -1,77 +1,78 @@
 ﻿@model BibliotecaNA.Models.Domain.Livro
 @{
 }
-
-<div class="container pt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Atualizar Livro</h3>
-            <form asp-action="Update" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
-                <input type="hidden" class="form-control" asp-for="Id" />
-
-                <div class="form-group">
-                    <label asp-for="Titulo">Título *</label>
-                    <input type="text" class="form-control" asp-for="Titulo" />
-                    <span asp-validation-for="Titulo" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <label asp-for="ImageFile">Upload da Capa *</label>
-                    <input type="file" class="form-control" asp-for="ImageFile" />
-                    <span asp-validation-for="ImageFile" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <label asp-for="IdGenero">Gênero *</label>
-                    <select asp-for="IdGenero" asp-items="Model.ListaGenero" class="form-control">
-                        <option value="">--select--</option>
-                    </select>
-                    <span asp-validation-for="IdGenero" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Isbn">Isbn *</label>
-                    <input type="text" class="form-control" asp-for="Isbn" />
-                    <span asp-validation-for="Isbn" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="NrPaginas">Número de páginas *</label>
-                    <input type="number" class="form-control" asp-for="NrPaginas" min="1" />
-                    <span asp-validation-for="NrPaginas" class="text-danger"></span>
-                </div>
-
-
-                <div class="form-group">
-                    <label asp-for="IdAutor">Autor *</label>
-                    <select asp-for="IdAutor" asp-items="Model.ListaAutor" class="form-control">
-                        <option value="">--select--</option>
-                    </select>
-                    <span asp-validation-for="IdAutor" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Titulo">Editora *</label>
-                    <select asp-for="IdEditora" asp-items="Model.ListaEditora" class="form-control">
-                        <option value="">--select--</option>
-                    </select>
-                    <span asp-validation-for="IdEditora" class="text-danger"></span>
-                </div>
-
-                @if (TempData["msg"] != null)
-                {
-                    <div class="form-group">
-                        @TempData["msg"]
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-center" style="color: #9b5b7d;">Atualizar livros</h2>
+            <div class="card shadow-lg p-4">
+                <form asp-action="Update" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
+                    <input type="hidden" class="form-control" asp-for="Id" />
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Titulo" placeholder="Título do Livro" />
+                        <label asp-for="Titulo">Título *</label>
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
                     </div>
-                }
-                <div class="form-group pt-3">
-                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Atualizar</button>
-                    <a href="/Livro/GetAll" class="btn btn-primary"> <i class="bi bi-list"></i>Listar livros</a>
-                </div>
 
-            </form>
+                    <div class=">
+                        <label class=" form-label text-secondary fw-bold" asp-for="ImageFile">Upload da Capa *</label>
+                        <input type="file" class="form-control" asp-for="ImageFile" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        <small class="text-muted">* Formatos aceitos: JPG, PNG, GIF</small>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdGenero" asp-items="Model.ListaGenero" class="form-select">
+                            <option value="">-- Selecione o Gênero --</option>
+                        </select>
+                        <label asp-for="IdGenero">Gênero *</label>
+                        <span asp-validation-for="IdGenero" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Isbn" placeholder="ISBN do Livro" />
+                        <label asp-for="Isbn">ISBN *</label>
+                        <span asp-validation-for="Isbn" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="number" class="form-control" asp-for="NrPaginas" placeholder="Número de Páginas"
+                            min="1" />
+                        <label asp-for="NrPaginas">Número de Páginas *</label>
+                        <span asp-validation-for="NrPaginas" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdAutor" asp-items="Model.ListaAutor" class="form-select">
+                            <option value="">-- Selecione o Autor --</option>
+                        </select>
+                        <label asp-for="IdAutor">Autor *</label>
+                        <span asp-validation-for="IdAutor" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdEditora" asp-items="Model.ListaEditora" class="form-select">
+                            <option value="">-- Selecione a Editora --</option>
+                        </select>
+                        <label asp-for="IdEditora">Editora *</label>
+                        <span asp-validation-for="IdEditora" class="text-danger"></span>
+                    </div>
+
+                    @if (TempData["msg"] != null)
+                    {
+                        <div class="alert alert-info text-center" role="alert">
+                            @TempData["msg"]
+                        </div>
+                    }
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <button type="submit" class="btn btn-outline-success btn-lg px-4"><i class="bi bi-save"></i>
+                            Adicionar</button>
+                        <a href="/Livro/GetAll" class="btn btn-outline-dark btn-lg px-4"><i class="bi bi-list"></i>
+                            Listar Livros</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
