@@ -19,12 +19,13 @@
 
         .confirm-btn {
             outline: 1px solid #ed8876;
+            color: #ed8876;
 
         }
 
         .confirm-btn:hover {
             background-color: #ed8876;
-            color: white
+            color: white;
         }
 
         .add-btn:hover {
@@ -33,7 +34,7 @@
             outline: 1px solid #ed8876;
         }
 
-        .nav-link {
+        .nav-link{
             border-radius: 10px;
             outline: 1px solid #ed8876;
         }
@@ -103,20 +104,30 @@
                 </div>
                 <br>
                 <ul class="shared-link list-unstyled d-flex flex-column gap-3 mb-5">
-                    <li class="active nav-link">
-                        <a style="color: #ed8876;" href="/Genero/GetAll">Gêneros</a>
+                    <li>
+                        <a href="/Genero/GetAll">
+                            <button class="btn confirm-btn w-100">Gêneros</button>
+                        </a>
                     </li>
-                    <li class="nav-link">
-                        <a style="color: #ed8876;" href="/Autor/GetAll">Autores</a>
+                    <li >
+                        <a href="/Autor/GetAll">
+                          <button class="btn confirm-btn w-100">Autores</button>
+                        </a>
                     </li>
-                    <li class="nav-link">
-                        <a style="color: #ed8876;" href="/Editora/GetAll">Editoras</a>
+                    <li >
+                        <a href="/Editora/GetAll">
+                          <button class="btn confirm-btn w-100">Editoras</button>
+                        </a>
                     </li>
-                    <li class="nav-link">
-                        <a style="color: #ed8876;" href="/Livro/GetAll">Livros</a>
+                    <li >
+                        <a href="/Livro/GetAll">
+                          <button class="btn confirm-btn w-100">Livros</button>
+                        </a>
                     </li>
-                    <li class="nav-link">
-                        <a style="color: #ed8876;" href="/Usuario/GetAll">Usuário</a>
+                    <li >
+                        <a href="/Usuario/GetAll">
+                          <button class="btn confirm-btn w-100">Usuário</button>
+                        </a>
                     </li>
                 </ul>
                 <form asp-controller="Usuario" asp-action="Logout" method="post">
