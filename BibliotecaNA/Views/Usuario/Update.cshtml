@@ -1,0 +1,41 @@
+﻿@model BibliotecaNA.Models.Domain.Usuario
+@{
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="pink-tlt">Atualizar Usuario</h3>
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Nome">Nome do Usuario *</label>
+                    <input type="text" class="form-control" asp-for="Nome" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email do Usuario *</label>
+                    <input type="text" class="form-control" asp-for="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Senha">Senha do Usuario *</label>
+                    <input type="text" class="form-control" asp-for="Senha" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+
+                @if (TempData["msg"] != null)
+                {
+                    <div class="form-group">
+                        @TempData["msg"]
+                    </div>
+                }
+                <div class="form-group pt-3">
+                    <button type="submit" class="btn add-btn"><i class="bi bi-save"></i> Atualizar</button>
+                    <a href="/Usuario/GetAll" class="btn btn-dark"> <i class="bi bi-list"></i>Listar Usuarioes</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

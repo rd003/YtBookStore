@@ -1,0 +1,78 @@
+﻿@model BibliotecaNA.Models.Domain.Livro
+@{
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-center pink-tlt">Adicionar Novo Livro</h2>
+            <div class="card shadow-lg p-4">
+                <form asp-action="Add" method="post" enctype="multipart/form-data" class="d-flex flex-column gap-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Titulo" placeholder="Título do Livro" />
+                        <label asp-for="Titulo">Título *</label>
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+
+                    <div class=">
+                        <label class=" form-label text-secondary fw-bold" asp-for="ImageFile">Upload da Capa *</label>
+                        <input type="file" class="form-control" asp-for="ImageFile" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                        <small class="text-muted">* Formatos aceitos: JPG, PNG, GIF</small>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdGenero" asp-items="Model.ListaGenero" class="form-select">
+                            <option value="">-- Selecione o Gênero --</option>
+                        </select>
+                        <label asp-for="IdGenero">Gênero *</label>
+                        <span asp-validation-for="IdGenero" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text" class="form-control" asp-for="Isbn" placeholder="ISBN do Livro" />
+                        <label asp-for="Isbn">ISBN *</label>
+                        <span asp-validation-for="Isbn" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="number" class="form-control" asp-for="NrPaginas" placeholder="Número de Páginas"
+                            min="1" />
+                        <label asp-for="NrPaginas">Número de Páginas *</label>
+                        <span asp-validation-for="NrPaginas" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdAutor" asp-items="Model.ListaAutor" class="form-select">
+                            <option value="">-- Selecione o Autor --</option>
+                        </select>
+                        <label asp-for="IdAutor">Autor *</label>
+                        <span asp-validation-for="IdAutor" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating">
+                        <select asp-for="IdEditora" asp-items="Model.ListaEditora" class="form-select">
+                            <option value="">-- Selecione a Editora --</option>
+                        </select>
+                        <label asp-for="IdEditora">Editora *</label>
+                        <span asp-validation-for="IdEditora" class="text-danger"></span>
+                    </div>
+
+                    @if (TempData["msg"] != null)
+                    {
+                        <div class="alert alert-info text-center" role="alert">
+                            @TempData["msg"]
+                        </div>
+                    }
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <button type="submit" class="btn add-btn btn-lg px-4"><i class="bi bi-save"></i>
+                            Adicionar</button>
+                        <a href="/Livro/GetAll" class="btn btn-dark btn-lg px-4"><i class="bi bi-list"></i>
+                            Listar Livros</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

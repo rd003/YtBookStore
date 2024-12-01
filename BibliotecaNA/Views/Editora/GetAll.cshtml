@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BibliotecaNA.Models.Domain.Editora>
+@{
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <h3 class="pink-tlt">Editoras</h3>
+
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th>Nome da editora</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td class="d-flex gap-4">
+                            <a class="btn confirm-btn" href="/Editora/Update?id=@item.Id"><i class="bi bi-pen"></i>
+                                Editar</a>
+                            <a class="btn btn-danger" onclick="return window.confirm('Tem a certeza que deseja remover?')"
+                                href="/Editora/Delete?id=@item.Id"><i class="bi bi-trash"></i> Remover</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn add-btn" href="/Editora/Add">Adicionar mais editoras</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+@model BibliotecaNA.Models.Domain.Usuario
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <div class="login-card">
+            <div class="login-title">Entrar na Livraria Noia</div>
+            <form asp-action="Login" method="post">
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">Email de Usuário</label>
+                    <input asp-for="Email" class="form-control" placeholder="Digite seu nome de usuário" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Senha" class="form-label">Senha</label>
+                    <input asp-for="Senha" type="password" class="form-control" placeholder="Digite sua senha" />
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                </div>
+            </form>
+            <div class="footer-text">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
