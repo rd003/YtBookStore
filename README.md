@@ -5,8 +5,12 @@ Now upgraded to .net 9.0
 ## How to run the project
 
 1. clone the project
-   git clone https://github.com/rd003/YtBookStore.git
-2. open `appsettings.json` file and update connection string's `data source=your server name`
+
+   ```bash
+      git clone https://github.com/rd003/YtBookStore.git
+   ```
+     
+3. open `appsettings.json` file and update connection string's `data source=your server name`
    
    ```json
     "ConnectionStrings": { "conn": "data source=RAVINDRA\\MSSQLSERVER01;initial catalog=YtBookStore;integrated security=true;encrypt=false"
